@@ -1,2 +1,2 @@
-//  let a = 5;
-//  console.log(a)
+const a = 7;
+alert(a);
