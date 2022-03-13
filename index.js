@@ -1,77 +1,103 @@
 
-// homework 2 
-1
-let number = +prompt("enter a number")
-let sum = 0
-while(number !== 0){
-    let lastdigit = number % 10
-    sum = sum + lastdigit
-    number = (number - lastdigit) / 10
+// homework 3
+function getarraylength(array){
+let length = 0
+for(let i = 0; array[i] !== undefined; i++){
+  length++
 }
-console.log(sum)
+return(length)
+}
+let array = [-1,0.4] 
+console.log(getarraylength(array))
+
 
 // 2
-let number1 = +prompt("enter a number")
-let number2 = +prompt("enter a number")
-let number3 = +prompt("enter a number")
-if(number1 < number2 + number3 && number2 < number1 + number3 && number3< number1 + number2){
-    alert("yes")
-}else{
-    alert("no")
-// }
+  function arraysum(array){
+      let sum = 0
+  for(let i = 0; array[i] !== undefined; i++){
+    sum = sum + array[i] 
+  }return sum;
+  }
+  let array = [5,6,7,8]
+  console.log(arraysum(array))
 
 // 3
-let number = +prompt("enter a number")
-let b = 0
-if(number === 0){
-console.log(1)
-}else{while(number !== 0){
-let lastdigit = number % 10
-b++
-number = (number - lastdigit) / 10
+function powof2(n){
+  let result = 1 
+  for(let i = 0; i < n; i++){
+    result *= 2
+  } return result
 }
-console.log(b)
+let min = 0
+let max = 150
+for(let i = 0; ; i++){
+  let p = powof2(i)
+  if(p >= max)
+  break;
+  if(min < p && p< max)
+  console.log(p)
 }
+
+// 2tarberak
+let a = +prompt("enter a number")
+let b = +prompt("enter a number")
+  if(a < b){ 
+let res = 1
+while(res < a ){
+  res*=2
+}
+while(res < b ){
+  console.log(res)
+  res *= 2
+}
+}else{console.log("you must give the biggest value to b not a ")}
 
 // 4
-let number = +prompt("enter a number")
-let b = 0
-while(number !== 0){
-let lastdigit = number % 10 
-if(lastdigit === 9 || lastdigit === -9){
-b++
+ let number = prompt("enter a number") 
+let result = []
+for(let i = 0; i < number.length; i++){
+  if(number[i] % 2 === 0 && number[i+1] % 2 === 0){
+result.push(number[i] + "-" )
+  }
+else{
+  result.push(number[i])
 }
-number = (number - lastdigit) / 10
-}console.log(b)
+}
+result = result + " "
+console.log(result)es devvov storaketner@ chi hanum vonc anem vor aranc join@ ogtagorcelu storaketner@ hani
+console.log(result.join('')) 
 
 // 5
-let number = +prompt("enter a number")
-let b = 0
-while(number !== 0){
-let lastdigit = number % 10
-b = b * 10 + lastdigit
-number = (number - lastdigit) / 10
-}console.log(b)
-
-
-
-// 2 tarberak stringov tarberakna
-let a = +prompt("enter a number")
-let b = " "
-let x = "-"
-if(a > 0) {while(a !== 0){
-let c = a % 10
-b = b + c 
-a = (a - c ) / 10
-}
-console.log(b)
-}else if(a < 0 )  {
- while(a !== 0){
-let c = a % 10
-x = x + (-c) 
-a = (a - c ) / 10
+let array = []
+function isPrime(n){   
+    if(n === 1 || n === 0) return false;
+    for(let i = 2; i <= n/2 ; i++){
+        if(n % i === 0) return false;
+   }
+    return true;
 } 
-console.log(x)
-}else{
-    console.log(0)
-}
+let index = +prompt("enter a number");
+let N = 1000;
+  for(let i = 1; i <= N; i++){
+      if(isPrime(i)) {
+        array.push( i );
+      }
+    }
+console.log(array[index - 1])
+
+// es el en der asac xndirna
+let rowcount = +prompt("enter a row number")
+let columncount = +prompt("enter a column number")
+let result = ""
+for(let i = 0; i < columncount; i++){
+    let row = " "
+    for(let j = 0; j < rowcount; j++){
+        if( i + j === rowcount - 1  ){
+            row += "*"   
+        }else{
+            row += " "
+        }
+    }result += row + "\n"
+}console.log(result)
+// glxavor ankunagci hakarakna
+// 95 erord toxi rowcount vor poxarinenq columncountov eli kashxati vrovhetev havasar en
