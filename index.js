@@ -1,103 +1,123 @@
 
-// homework 3
-function getarraylength(array){
-let length = 0
-for(let i = 0; array[i] !== undefined; i++){
-  length++
+// homework 4 
+// 1
+let number1 = +prompt("enter a number")
+let number2 = +prompt("enter a number")
+let number3 = +prompt("how much should the number increase?")
+let array = []
+debugger
+if(number2 > number1){
+for(let i = number1;i <= number2;i = i + number3){
+array.push(i)
 }
-return(length)
+console.log(array)
 }
-let array = [-1,0.4] 
-console.log(getarraylength(array))
+else{
+  for(let i = number2; i <= number1; i = i + number3){
+    array.push(i)
+  }
+console.log(array)
+}
 
 
 // 2
-  function arraysum(array){
-      let sum = 0
-  for(let i = 0; array[i] !== undefined; i++){
-    sum = sum + array[i] 
-  }return sum;
+let string = prompt("enter a string")
+let symbol = prompt("enter a symbol")
+let sum = 0
+for(let i = 0; i < string.length; i++){
+  if(symbol === string.charAt(i)){
+    sum++
   }
-  let array = [5,6,7,8]
-  console.log(arraysum(array))
+}
+console.log(sum)
 
 // 3
-function powof2(n){
-  let result = 1 
-  for(let i = 0; i < n; i++){
-    result *= 2
-  } return result
+let string = prompt("enter a string")
+let result = ""
+if(string === ""){
+  console.log("no")
 }
-let min = 0
-let max = 150
-for(let i = 0; ; i++){
-  let p = powof2(i)
-  if(p >= max)
-  break;
-  if(min < p && p< max)
-  console.log(p)
+else{for(let i = string.length - 1; i >= 0; i--){
+  result += string.charAt(i)
 }
-
-// 2tarberak
-let a = +prompt("enter a number")
-let b = +prompt("enter a number")
-  if(a < b){ 
-let res = 1
-while(res < a ){
-  res*=2
+ if(result === string){
+  console.log("yes")
 }
-while(res < b ){
-  console.log(res)
-  res *= 2
+else{
+console.log("no")
 }
-}else{console.log("you must give the biggest value to b not a ")}
+}
 
 // 4
- let number = prompt("enter a number") 
-let result = []
-for(let i = 0; i < number.length; i++){
-  if(number[i] % 2 === 0 && number[i+1] % 2 === 0){
-result.push(number[i] + "-" )
+function ismax(array){
+  let max = -Infinity
+  let length = array.length
+  while(length--){
+    if(max < array[length]){
+      max = array[length]
+    }
   }
-else{
-  result.push(number[i])
+  return max
 }
-}
-// result = result + " "
-// console.log(result)es devvov storaketner@ chi hanum vonc anem vor aranc join@ ogtagorcelu storaketner@ hani
-console.log(result.join('')) 
+let length = +prompt('enter a array length')
+  let array = []
+  for(let i = 0; i < length; i++){
+    array.push(+prompt('enter a number'))
+  }
+  console.log(ismax(array))
 
 // 5
-function isprime(N){
-  if(N === 0 || N === 1)return false;
- 
-  for(let i = 2; i < N; i++ ){
-    if(N % i === 0)return false
-  }return true;
-}
-let array = []
-let index = +prompt("enter a number")
-let n = 5*index
-for(let i = 0;i < n; i++){
-  if(isprime(i)){
-    array.push(i)
+function product2neighbours(array){
+  let resultarray = []
+  for(let i = 0; i + 1 < array.length; i++){
+resultarray.push(array[i]*array[i+1])
   }
+  return resultarray;
 }
-console.log(array[index - 1])
+let length = +prompt('enter a array length')
+  let array = []
+  for(let i = 0; i < length; i++){
+    array.push(+prompt('enter a number'))
+  }
+console.log(product2neighbours(array))
 
-// es el en der asac xndirna
-let rowcount = +prompt("enter a row number")
-let columncount = +prompt("enter a column number")
+
+// 6
+let string = prompt("enter a string")
+let symbol1 = prompt("enter a symbol which can be changed")
+let symbol2 = prompt("enter a symbol")
 let result = ""
-for(let i = 0; i < columncount; i++){
-    let row = " "
-    for(let j = 0; j < rowcount; j++){
-        if( i + j === rowcount - 1  ){
-            row += "*"   
-        }else{
-            row += " "
-        }
-    }result += row + "\n"
-}console.log(result)
-// glxavor ankunagci hakarakna
-// 95 erord toxi rowcount vor poxarinenq columncountov eli kashxati vrovhetev havasar en
+for(let i = 0; i < string.length; i++){
+  if(symbol1 === string[i]){ 
+  result += symbol2 
+}
+else{result += string[i]}
+}
+console.log(result)
+// kam karanq string.charAt ov anenq
+
+// 7
+let rowcount = +prompt("enter a number")
+let columncount = +prompt("enter a number")
+let result = ""
+for(let i = 0;i <= (rowcount-1) / 2; i++){
+  let row = ""
+  for(let j = 0;j < columncount; j++){
+    if(i >= j){
+      row += j+1
+    }
+    else{row += " "}
+  }
+  result += row + "\n"
+}
+for(let i = rowcount - ((rowcount - 1)/2); i <= rowcount; i++){
+  let row = ""
+  for(let j = 0;j < columncount; j++){
+    if(i + j >= rowcount){
+      row += " "
+    }
+    else{row += j+1}
+  }
+  result += row + "\n"
+}
+console.log(result)
